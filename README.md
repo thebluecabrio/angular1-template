@@ -28,7 +28,9 @@ JS Vendors used in project, they live in src/js/vendor
 
 ##### Dev dependencies
 List of dev dependencies used, can be found in package.json.
-```grunt": "~0.4.4",
+
+```
+grunt": "~0.4.4",
 "grunt-beep": "latest",
 "grunt-cache-bust": "^1.3.0",
 "grunt-contrib-clean": "latest",
