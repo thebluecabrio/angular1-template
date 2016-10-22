@@ -22,5 +22,11 @@
     "jshint-stylish": "latest",
     "load-grunt-config": "latest",
     "time-grunt": "latest"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "moment": "^2.15.1"
   }
 }

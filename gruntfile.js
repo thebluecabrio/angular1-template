@@ -90,17 +90,21 @@ module.exports = function (grunt) {
         // Combine all of the vendor JS files into a single file
         concat: {
             angular_js: {
-                src: ['src/js/vendor/angular/angular.js','src/js/vendor/angular/angular-*.min.js'],
+                src: [
+                  'node_modules/angular/angular.js',
+                  'node_modules/angular-*/angular-*.min.js'],
                 dest: 'dist/js/angular.js'
             },
             angular_js_prod: {
-                src: ['src/js/vendor/angular/angular.min.js', 'src/js/vendor/angular/angular-*.min.js'
+                src: [
+                  'node_modules/angular/angular.min.js',
+                  'node_modules/angular-*/angular-*.min.js'
                 ],
                 dest: 'dist/js/angular.js'
             },
             vendor_js: {
                 src: [
-                    'src/js/vendor/moment.min.js'
+                    'node_modules/moment/min/moment.min.js'
                 ],
                 dest: 'dist/js/vendor.js'
             }
