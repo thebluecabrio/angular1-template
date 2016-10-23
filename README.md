@@ -1,5 +1,8 @@
 # The Blue Cabrio
 
+### Status
+[![Build Status](https://travis-ci.org/thebluecabrio/angular1-template.png)](https://travis-ci.org/thebluecabrio/angular1-template.png)
+
 This is a template for angular 1.5.8 with sass
 
 ## Get started
