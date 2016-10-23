@@ -33,18 +33,25 @@ module.exports = function(config) {
     exclude: [
     ],
 
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['progress', 'coverage'],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'app/**/*.js': ['coverage'],
+        'app/**/*.html': ['ng-html2js']
     },
 
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    // How to report on coverage
+    coverageReporter: {
+        reporters: [
+            { type: 'html', dir: 'coverage/html' },
+            { type: 'cobertura', dir: 'coverage/cobertura' }
+        ]
+    },
 
     // web server port
     port: 9876,
@@ -62,6 +69,8 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    // run in the background
+    background: true,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -70,10 +79,18 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    // Processing templates for use with directives using templateUrl
+    ngHtml2JsPreprocessor: {
+        // strip this from the file path
+        stripPrefix: '',
+        // prepend this to the
+        prependPrefix: 'views/'
+    }
   })
 }
