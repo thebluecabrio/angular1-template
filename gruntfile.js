@@ -302,7 +302,8 @@ module.exports = function (grunt) {
 
     // 'develop' task for active site development
     grunt.registerTask('develop',
-        ['jshint',
+        ['karma:development',
+         'jshint',
          'clean:all',
          'copy_static',
          'sass',
@@ -313,7 +314,6 @@ module.exports = function (grunt) {
          'getip',
          'beep:error:*',
          'beep:**',
-         'karma:development',
          'watch']);
 
     // 'build' task for creating a clean, optimised set of files for distribution
