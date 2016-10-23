@@ -3,7 +3,7 @@
 
 module.exports = function(config) {
 
-  config.set({
+  var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -100,10 +100,11 @@ module.exports = function(config) {
         // prepend this to the
         prependPrefix: 'views/'
     }
-  })
+  };
 
   if (process.env.TRAVIS) {
     configuration.browsers = ['Chrome_travis_ci'];
   }
-  
+
+  config.set(configuration);
 }
